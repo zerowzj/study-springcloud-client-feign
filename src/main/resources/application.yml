@@ -1,13 +1,13 @@
 #
 server:
-  port: 7301
+  port: 7400
 #
 logging:
   config: classpath:logback.xml
 #
 spring:
   application:
-    name: study-springcloud-consumer
+    name: study-springcloud-client-feign
   main:
     web-application-type: servlet
   cloud:
