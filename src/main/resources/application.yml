@@ -30,3 +30,16 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: @eureka.instance.defaultZone@
+#########################
+#（★）Feign
+#########################
+feign:
+  client:
+    config:
+      - sss:123123
+      - fsaf:123123
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
