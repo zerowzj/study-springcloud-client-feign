@@ -20,7 +20,7 @@ spring:
 #########################
 eureka:
   instance:
-    #hostname: study-springcloud-consumer
+    hostname: study-springcloud-client-feign
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: false
     lease-renewal-interval-in-seconds: 30
