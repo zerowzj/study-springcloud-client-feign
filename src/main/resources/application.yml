@@ -15,9 +15,7 @@ spring:
       #开启重试机制
       retry:
         enabled: true
-#########################
-#（★）Eureka Client
-#########################
+#Eureka Client
 eureka:
   instance:
     hostname: study-springcloud-client-feign
@@ -33,13 +31,17 @@ eureka:
 #########################
 #（★）Feign
 #########################
+#（1）全局配置
 feign:
   #（▲）客户端配置
   client:
+    default-config: default
+    default-to-properties: true
     config:
+      default:
       - sss: 1213123
       - fsaf: 123123
-#    default-config:
+  #    default-config:
 #    default-to-properties: true
   #（▲）压缩配置
   compression:
