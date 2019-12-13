@@ -17,6 +17,6 @@ public class RetryController {
 
     @PostMapping("/retry")
     public void retry(int code) {
-        retryService.retry(code, null);
+        retryService.retry(code);
     }
 }
