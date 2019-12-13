@@ -21,8 +21,6 @@ eureka:
     hostname: study-springcloud-client-feign
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: false
-    lease-renewal-interval-in-seconds: 30
-    lease-expiration-duration-in-seconds: 90
   client:
     register-with-eureka: true
     fetch-registry: true
@@ -31,7 +29,6 @@ eureka:
 #########################
 #（★）Feign
 #########################
-#（1）全局配置
 feign:
   #（▲）客户端配置
   client:
