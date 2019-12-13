@@ -14,7 +14,7 @@ spring:
     loadbalancer:
       #开启重试机制
       retry:
-        enabled: true
+        enabled: false
 #Eureka Client
 eureka:
   instance:
@@ -29,6 +29,7 @@ eureka:
 #########################
 #（★）Feign
 #########################
+
 feign:
   #（▲）客户端配置
   client:
@@ -36,10 +37,8 @@ feign:
     default-to-properties: true
     config:
       default:
-      - sss: 1213123
-      - fsaf: 123123
-  #    default-config:
-#    default-to-properties: true
+      - connectTimeout: 5000
+      - readTimeout: 5000
   #（▲）压缩配置
   compression:
     request:
@@ -56,3 +55,9 @@ feign:
   #（▲）OKHttp配置
   okhttp:
     enabled: false
+  #（）
+  study-springcloud-provider:
+    connectTimeout: 5000
+    readTimeout: 5000
+    retryer:
+
