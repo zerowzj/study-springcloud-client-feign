@@ -10,6 +10,8 @@ spring:
     name: study-springcloud-client-feign
   main:
     web-application-type: servlet
+    #当遇到同样名字的时候，是否允许覆盖注册
+    allow-bean-definition-overriding: true
   cloud:
     loadbalancer:
       #开启重试机制
@@ -29,7 +31,6 @@ eureka:
 #########################
 #（★）Feign
 #########################
-
 feign:
   #（▲）客户端配置
   client:
@@ -37,8 +38,12 @@ feign:
     default-to-properties: true
     config:
       default:
-      - connectTimeout: 5000
-      - readTimeout: 5000
+        - connectTimeout: 5000
+        - readTimeout: 5000
+      #Client配置
+      study-springcloud-provider:
+        connectTimeout: 5000
+        readTimeout: 5000
   #（▲）压缩配置
   compression:
     request:
@@ -50,14 +55,8 @@ feign:
   #（▲）HttpClient配置
   httpclient:
     enabled: true
-    connection-timeout: 2000
-    max-connections: 200
+    #connection-timeout: 2000
+    #max-connections: 200
   #（▲）OKHttp配置
   okhttp:
     enabled: false
-  #（）
-  study-springcloud-provider:
-    connectTimeout: 5000
-    readTimeout: 5000
-    retryer:
-

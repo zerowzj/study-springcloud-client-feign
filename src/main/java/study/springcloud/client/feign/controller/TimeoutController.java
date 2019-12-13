@@ -16,9 +16,9 @@ public class TimeoutController {
     @Autowired
     private TimeoutService timeoutService;
 
-    @PostMapping("/getNextServer")
-    public String getNextServer(@RequestParam Long timeout) {
+    @PostMapping("/timeout")
+    public String timeout(@RequestParam Long timeout) {
         timeoutService.await(timeout);
-        return "";
+        return "ok";
     }
 }
