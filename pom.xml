@@ -42,23 +42,23 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- ==================== -->
-        <!--（★）Eureka          -->
-        <!-- ==================== -->
+        <!-- ============================== -->
+        <!--（★）Eureka                    -->
+        <!-- ============================== -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!-- ==================== -->
-        <!--（★）Feign           -->
-        <!-- ==================== -->
+        <!-- ============================== -->
+        <!--（★）Feign                     -->
+        <!-- ============================== -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
-        <!-- ==================== -->
-        <!--（★）Ribbon          -->
-        <!-- ==================== -->
+        <!-- ============================== -->
+        <!--（★）Ribbon                     -->
+        <!-- ============================== -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
