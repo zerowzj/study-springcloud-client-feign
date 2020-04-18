@@ -7,7 +7,7 @@ logging:
 #
 spring:
   application:
-    name: study-springcloud-client-feign
+    name: study-springcloud-consumer-feign
   main:
     web-application-type: servlet
     #当遇到同样名字的时候，是否允许覆盖注册
