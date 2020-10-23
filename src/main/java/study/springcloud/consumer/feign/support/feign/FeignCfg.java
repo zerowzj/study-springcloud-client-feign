@@ -1,4 +1,4 @@
-package study.springcloud.client.feign.support.feign;
+package study.springcloud.consumer.feign.support.feign;
 
 import feign.Request;
 import feign.Retryer;

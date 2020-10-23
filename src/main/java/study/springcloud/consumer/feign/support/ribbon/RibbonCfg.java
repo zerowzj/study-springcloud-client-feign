@@ -1,4 +1,4 @@
-package study.springcloud.client.feign.support.ribbon;
+package study.springcloud.consumer.feign.support.ribbon;
 
 import org.springframework.context.annotation.Configuration;
 

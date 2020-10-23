@@ -1,9 +1,7 @@
-package study.springcloud.client.feign;
+package study.springcloud.consumer.feign;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
-import study.springcloud.client.feign.support.SpringBootCfg;
+import study.springcloud.consumer.feign.support.SpringBootCfg;
 
 public class Startup {
 

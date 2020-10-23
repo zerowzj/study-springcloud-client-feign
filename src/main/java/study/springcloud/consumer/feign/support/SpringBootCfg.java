@@ -1,4 +1,4 @@
-package study.springcloud.client.feign.support;
+package study.springcloud.consumer.feign.support;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;

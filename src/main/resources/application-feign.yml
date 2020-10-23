@@ -1,11 +1,5 @@
 #
 spring:
-  application:
-    name: study-springcloud-consumer-feign
-  main:
-    web-application-type: servlet
-    #当bean同名时，是否允许覆盖注册
-    allow-bean-definition-overriding: true
   cloud:
     #开启重试机制
     loadbalancer:
@@ -43,7 +37,7 @@ feign:
       default:
         connectTimeout: 8000
         readTimeout: 6000
-        requestInterceptors: study.springcloud.client.feign.support.feign.CustomRequestInterceptor
+        requestInterceptors: CustomRequestInterceptor
         #retryer:
         #errorDecoder:
         #decoder:

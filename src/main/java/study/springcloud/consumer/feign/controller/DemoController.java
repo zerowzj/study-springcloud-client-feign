@@ -1,4 +1,4 @@
-package study.springcloud.client.feign.controller;
+package study.springcloud.consumer.feign.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
