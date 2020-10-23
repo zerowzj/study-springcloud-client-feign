@@ -1,21 +1,20 @@
 package study.springcloud.client.feign.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import study.springcloud.provider.RetryService;
+import study.springcloud.provider.DemoService;
 
 @RestController
-public class RetryController {
+public class DemoController {
 
     @Autowired
-    private RetryService retryService;
+    private DemoService demoService;
 
-    @PostMapping("/retry")
-    public void retry(@RequestParam int code) {
-        retryService.retry(code);
+    @PostMapping("/sayHi")
+    public void sayHi() {
+       String name= demoService.sayHi("safdasf");
+       System.out.println(name);
     }
 }

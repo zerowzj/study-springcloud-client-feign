@@ -1,12 +1,11 @@
 package study.springcloud.client.feign.support;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import study.springcloud.client.feign.support.ribbon.RibbonCfg;
 
 @EnableFeignClients(basePackages = {"study.springcloud.provider"})
-@EnableEurekaClient
+@EnableDiscoveryClient
 @SpringBootApplication(scanBasePackages = "study.springcloud.client.feign")
 public class SpringBootCfg {
 }
