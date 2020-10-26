@@ -15,3 +15,14 @@ spring:
     allow-bean-definition-overriding: true
   profiles:
     active: feign
+#
+eureka:
+  instance:
+    hostname: @eureka.host.name@
+    instance-id: ${eureka.instance.hostname}:${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: @eureka.server.list@
+    register-with-eureka: false
+    fetch-registry: false

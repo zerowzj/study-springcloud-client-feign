@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import study.springcloud.provider.TimeoutService;
+import study.springcloud.provider.timeout.TimeoutService;
 
 @RestController
 public class TimeoutController {

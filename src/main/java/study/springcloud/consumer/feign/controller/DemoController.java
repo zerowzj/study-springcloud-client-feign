@@ -2,19 +2,16 @@ package study.springcloud.consumer.feign.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import study.springcloud.provider.DemoService;
+import study.springcloud.provider.greeting.GreetingService;
 
 @RestController
 public class DemoController {
 
     @Autowired
-    private DemoService demoService;
+    private GreetingService greetingService;
 
     @PostMapping("/sayHi")
     public void sayHi() {
-       String name= demoService.sayHi("safdasf");
-       System.out.println(name);
     }
 }
