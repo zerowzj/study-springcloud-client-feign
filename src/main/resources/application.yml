@@ -18,7 +18,7 @@ spring:
 #
 eureka:
   instance:
-    hostname: @eureka.host.name@
+    hostname: ${spring.application.name}
     instance-id: ${eureka.instance.hostname}:${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
   client:
