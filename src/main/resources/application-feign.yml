@@ -6,9 +6,9 @@ spring:
       retry:
         enabled: false
     #服务注册和发现，Nacos
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
 #
 feign:
   #（▲）压缩配置
