@@ -24,25 +24,25 @@ feign:
     enabled: true
     #connection-timeout: 2000
     #max-connections: 200
-  #（▲）OKHttp配置
+  #（▲）OkHttp配置
   okhttp:
     enabled: false
   #（▲）客户端配置
-  client:
-    #默认配置名称
-    default-config: default
-    #文件配置是否覆盖代码配置
-    default-to-properties: true
-    config:
-      default:
-        connectTimeout: 8000
-        readTimeout: 6000
-        requestInterceptors: CustomRequestInterceptor
-        #retryer:
-        #errorDecoder:
-        #decoder:
-        #encoder:
-      #Client配置
-      study-springcloud-provider:
-        connectTimeout: 8000
-        readTimeout: 6000
+#  client:
+#    #默认配置名称
+#    default-config: default
+#    #文件配置是否覆盖代码配置
+#    default-to-properties: true
+#    config:
+#      default:
+#        connectTimeout: 8000
+#        readTimeout: 6000
+#        requestInterceptors: CustomRequestInterceptor
+#        #retryer:
+#        #errorDecoder:
+#        #decoder:
+#        #encoder:
+#      #Client配置
+#      study-springcloud-provider:
+#        connectTimeout: 8000
+#        readTimeout: 6000

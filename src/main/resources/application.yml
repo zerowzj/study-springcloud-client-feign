@@ -14,15 +14,17 @@ spring:
     #当bean同名时，是否允许覆盖注册
     allow-bean-definition-overriding: true
   profiles:
-    active: feign
+    active: feign, @env@
 #
 eureka:
   instance:
     hostname: ${spring.application.name}
-    instance-id: ${eureka.instance.hostname}:${spring.cloud.client.ip-address}:${server.port}
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 8
   client:
     service-url:
       defaultZone: @eureka.server.list@
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true

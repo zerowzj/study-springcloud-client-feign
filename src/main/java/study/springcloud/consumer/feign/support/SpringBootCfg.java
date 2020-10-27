@@ -4,9 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
-//
-@EnableFeignClients(basePackages = {"study.springcloud.provider"},
-        defaultConfiguration = {})
+//FeignClient
+@EnableFeignClients(basePackages = {"study.springcloud.provider"})
 //服务注册和发现
 @EnableEurekaClient
 
