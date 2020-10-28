@@ -2,17 +2,20 @@ package study.springcloud.consumer.feign.support.feign;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient;
 
+@Slf4j
 public class CustomRequestInterceptor implements RequestInterceptor {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(CustomRequestInterceptor.class);
+    @Autowired
+    LoadBalancerFeignClient loadBalancerFeignClient;
 
     @Override
     public void apply(RequestTemplate requestTemplate) {
-        LOGGER.info("=======================");
-        LOGGER.info("你好");
-        LOGGER.info("=======================");
+        log.info("你好");
+        String url = requestTemplate.url();
+        log.info(">>>>>> {}", url);
     }
 }

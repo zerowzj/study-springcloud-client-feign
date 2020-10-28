@@ -27,22 +27,28 @@ feign:
   #（▲）OkHttp配置
   okhttp:
     enabled: false
-  #（▲）客户端配置
-#  client:
-#    #默认配置名称
-#    default-config: default
-#    #文件配置是否覆盖代码配置
-#    default-to-properties: true
-#    config:
-#      default:
-#        connectTimeout: 8000
-#        readTimeout: 6000
-#        requestInterceptors: CustomRequestInterceptor
-#        #retryer:
-#        #errorDecoder:
-#        #decoder:
-#        #encoder:
-#      #Client配置
-#      study-springcloud-provider:
-#        connectTimeout: 8000
-#        readTimeout: 6000
+  #客户端配置
+  client:
+    #默认配置名称
+    default-config: default
+    #文件配置是否覆盖代码配置
+    default-to-properties: true
+    config:
+      #（▲）默认配置
+      default:
+        #超时
+        connectTimeout: 8000
+        readTimeout: 8000
+        #拦截器
+        requestInterceptors:
+          - study.springcloud.consumer.feign.support.feign.CustomRequestInterceptor
+        #重试
+        #retryer: study.springcloud.consumer.feign.support.feign.SimpleRetryer
+        #decode404:
+        #errorDecoder:
+        #decoder:
+        #encoder:
+      #（▲）特殊配置
+      study-springcloud-provider:
+        connectTimeout: 5000
+        readTimeout: 5000
