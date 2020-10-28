@@ -17,4 +17,10 @@ public class GreetingController {
         greetingService.sayBye();
         return "hello";
     }
+
+    @RequestMapping("/sayBye")
+    public String sayBye() {
+        greetingService.sayBye();
+        return "byebye";
+    }
 }

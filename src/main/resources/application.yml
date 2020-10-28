@@ -1,6 +1,6 @@
 #
 server:
-  port: 7400
+  port: 7500
 #
 logging:
   config: classpath:logback-spring.xml
@@ -15,14 +15,17 @@ spring:
     allow-bean-definition-overriding: true
   profiles:
     active: feign, @env@
-#
+  #Nacos
+#Eureka
 eureka:
   instance:
     hostname: ${spring.application.name}
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
+    #ip-address:
   client:
     service-url:
       defaultZone: @eureka.server.list@
+    enabled: true
     register-with-eureka: true
     fetch-registry: true
