@@ -13,16 +13,19 @@ public class FeignCfg {
     public static int READ_TIME_OUT_MS = 3 * 1000;
 
     /**
-     *
+     * 超时配置
      */
     @Bean
     public Request.Options options() {
         return new Request.Options(CONNECT_TIME_OUT_MS, READ_TIME_OUT_MS);
     }
 
+    /**
+     * 重试配置
+     */
 //    @Bean
-//    public Retryer feignRetryer() {
-//        Retryer retryer = new Retryer.Default(100, 1000, 4);
-//        return retryer;
-//    }
+    public Retryer feignRetryer() {
+        Retryer retryer = new Retryer.Default(100, 1000, 4);
+        return retryer;
+    }
 }
