@@ -41,7 +41,7 @@ feign:
         readTimeout: 8000
         #拦截器
         requestInterceptors:
-          - study.springcloud.consumer.feign.support.feign.CustomRequestInterceptor
+          - study.springcloud.consumer.feign.support.feign.CommonRequestInterceptor
         #重试
         #retryer: study.springcloud.consumer.feign.support.feign.SimpleRetryer
         #decode404:
@@ -53,4 +53,5 @@ feign:
         connectTimeout: 5000
         readTimeout: 5000
         requestInterceptors:
-          - study.springcloud.consumer.feign.support.feign.MyRequestInterceptor
+          - study.springcloud.consumer.feign.support.feign.CustomRequestInterceptor
+        #retryer: study.springcloud.consumer.feign.support.feign.SimpleRetryer

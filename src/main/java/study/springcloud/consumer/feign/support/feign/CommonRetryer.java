@@ -5,7 +5,7 @@ import feign.Retryer;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class SimpleRetryer implements Retryer {
+public class CommonRetryer implements Retryer {
 
     @Override
     public void continueOrPropagate(RetryableException ex) {

@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient;
 
 @Slf4j
-public class MyRequestInterceptor implements RequestInterceptor {
+public class CommonRequestInterceptor implements RequestInterceptor {
 
     @Autowired
     LoadBalancerFeignClient loadBalancerFeignClient;
 
     @Override
     public void apply(RequestTemplate requestTemplate) {
-        log.info("你好11111111111");
+        log.info("你好");
         String url = requestTemplate.url();
         log.info(">>>>>> {}", url);
     }
