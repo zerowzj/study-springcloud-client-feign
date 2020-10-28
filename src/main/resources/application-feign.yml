@@ -32,7 +32,7 @@ feign:
     #默认配置名称
     default-config: default
     #文件配置是否覆盖代码配置
-    default-to-properties: true
+    default-to-properties: false
     config:
       #（▲）默认配置
       default:
