@@ -1,6 +1,7 @@
 package study.springcloud.consumer.feign.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import study.springcloud.provider.greeting.GreetingService;
@@ -8,6 +9,8 @@ import study.springcloud.provider.greeting.GreetingService;
 @RestController
 @RequestMapping("/greeting")
 public class GreetingController {
+    @Autowired
+    LoadBalancerClient loadBalancerClient;
 
     @Autowired
     private GreetingService greetingService;
