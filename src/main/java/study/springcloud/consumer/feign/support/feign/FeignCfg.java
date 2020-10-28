@@ -20,9 +20,9 @@ public class FeignCfg {
         return new Request.Options(CONNECT_TIME_OUT_MS, READ_TIME_OUT_MS);
     }
 
-    @Bean
-    public Retryer feignRetryer() {
-        Retryer retryer = new Retryer.Default(100, 1000, 4);
-        return retryer;
-    }
+//    @Bean
+//    public Retryer feignRetryer() {
+//        Retryer retryer = new Retryer.Default(100, 1000, 4);
+//        return retryer;
+//    }
 }
