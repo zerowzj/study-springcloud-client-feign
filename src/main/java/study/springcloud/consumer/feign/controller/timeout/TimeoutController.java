@@ -1,4 +1,4 @@
-package study.springcloud.consumer.feign.controller;
+package study.springcloud.consumer.feign.controller.timeout;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

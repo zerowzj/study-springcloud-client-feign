@@ -10,7 +10,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Greenwich.SR4</spring-cloud.version>
         <docker.image.prefix>study</docker.image.prefix>
     </properties>
 
@@ -24,7 +23,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
+                <version>Greenwich.SR4</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -37,7 +36,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <!-- ============================== -->
-        <!--（★）服务注册和发现             -->
+        <!--（★）SpringCloud Eureka Client  -->
         <!-- ============================== -->
         <!-- Eureka -->
         <dependency>
@@ -51,22 +50,22 @@
 <!--            <version>2.1.0.RELEASE</version>-->
 <!--        </dependency>-->
         <!-- ============================== -->
-        <!--（★）Open Feign                -->
+        <!--（★）SpringCloud OpenFeign      -->
         <!-- ============================== -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <!-- ============================== -->
-        <!--（★）Ribbon                     -->
+        <!--（★）SpringCloud Ribbon        -->
         <!-- ============================== -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
         </dependency>
-        <!-- ==================== -->
-        <!-- （★）Spring Retry   -->
-        <!-- ==================== -->
+        <!-- ============================== -->
+        <!-- （★）Spring Retry              -->
+        <!-- ============================== -->
         <dependency>
             <groupId>org.springframework.retry</groupId>
             <artifactId>spring-retry</artifactId>

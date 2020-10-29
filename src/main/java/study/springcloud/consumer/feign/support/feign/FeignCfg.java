@@ -8,16 +8,16 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FeignCfg {
 
-    public static int CONNECT_TIME_OUT_MS = 3 * 1000;
+    public static int CONNECT_TIMEOUT_MS = 3 * 1000;
 
-    public static int READ_TIME_OUT_MS = 3 * 1000;
+    public static int READ_TIMEOUT_MS = 3 * 1000;
 
     /**
      * 超时配置
      */
     @Bean
     public Request.Options options() {
-        return new Request.Options(CONNECT_TIME_OUT_MS, READ_TIME_OUT_MS);
+        return new Request.Options(CONNECT_TIMEOUT_MS, READ_TIMEOUT_MS);
     }
 
     /**

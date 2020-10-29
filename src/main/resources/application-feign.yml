@@ -19,12 +19,11 @@ feign:
       min-request-size: 2048
     response:
       enabled: true
-  #（▲）HttpClient配置
+  #（▲）http客户端
   httpclient:
     enabled: true
     #connection-timeout: 2000
     #max-connections: 200
-  #（▲）OkHttp配置
   okhttp:
     enabled: false
   #客户端配置
