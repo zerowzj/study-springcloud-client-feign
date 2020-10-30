@@ -11,27 +11,20 @@ spring:
 #        server-addr: 127.0.0.1:8848
 #
 feign:
-  #（▲）压缩配置
-  compression:
-    request:
-      enabled: true
-      mime-types: text/xml, application/xml, application/json
-      min-request-size: 2048
-    response:
-      enabled: true
   #（▲）http客户端
   httpclient:
     enabled: true
-    #connection-timeout: 2000
+    connection-timeout: 2000
     #max-connections: 200
   okhttp:
     enabled: false
-  #客户端配置
+  #（▲）服务客户端
   client:
+    #是否使用文件配置
+    default-to-properties: true
     #默认配置名称
     default-config: default
-    #文件配置是否覆盖代码配置
-    default-to-properties: false
+    #特殊 --> 默认
     config:
       #（▲）默认配置
       default:
@@ -47,10 +40,16 @@ feign:
         #errorDecoder:
         #decoder:
         #encoder:
-      #（▲）特殊配置
+        #（▲）特殊配置
       study-springcloud-provider:
         connectTimeout: 5000
         readTimeout: 5000
-        requestInterceptors:
-          - study.springcloud.consumer.feign.support.feign.CustomRequestInterceptor
+        #        requestInterceptors:
+        #          - study.springcloud.consumer.feign.support.feign.CustomRequestInterceptor
         #retryer: study.springcloud.consumer.feign.support.feign.SimpleRetryer
+ribbon:
+  ReadTimeout: 3000
+  ConnectTimeout: 3000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: false

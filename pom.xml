@@ -63,13 +63,13 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
         </dependency>
-        <!-- ============================== -->
-        <!-- （★）Spring Retry              -->
-        <!-- ============================== -->
-        <dependency>
-            <groupId>org.springframework.retry</groupId>
-            <artifactId>spring-retry</artifactId>
-        </dependency>
+<!--        &lt;!&ndash; ============================== &ndash;&gt;-->
+<!--        &lt;!&ndash; （★）Spring Retry              &ndash;&gt;-->
+<!--        &lt;!&ndash; ============================== &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.retry</groupId>-->
+<!--            <artifactId>spring-retry</artifactId>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.projectlombok</groupId>

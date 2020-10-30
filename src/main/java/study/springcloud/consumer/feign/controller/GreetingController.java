@@ -8,7 +8,6 @@ import study.springcloud.provider.greeting.GreetingService;
 
 @Slf4j
 @RestController
-@RequestMapping("/greeting")
 public class GreetingController {
 
     @Autowired
