@@ -47,6 +47,8 @@ feign:
         #        requestInterceptors:
         #          - study.springcloud.consumer.feign.support.feign.CustomRequestInterceptor
         #retryer: study.springcloud.consumer.feign.support.feign.SimpleRetryer
+
+#
 ribbon:
   ReadTimeout: 3000
   ConnectTimeout: 3000
