@@ -4,19 +4,16 @@ cd $(dirname $0)
 cd ..
 
 #项目名称
-PROJECT_NAME=study-springboot-netty-socketio
+PROJECT_NAME=study-springboot-consumer-feign
 #JAR文件名
-JAR_NAME=study-springboot-netty-socketio-1.0.jar
+JAR_NAME=study-springboot-consumer-feign-1.0.jar
 #部署目录
 DEPLOY_HOME=$(pwd)
-#Lib目录
-LIB_DIR=$DEPLOY_HOME/lib
-#日志目录
-LOG_DIR=/app/logs/$PROJECT_NAME
+
 #标准输出文件
-STDOUT_FILE=$LOG_DIR/stdout.%Y-%m-%d.log
+STDOUT_FILE=/xdfapp/logs/$PROJECT_NAME/stdout.log
 # GC日志文件
-GC_LOG_FILE=$LOG_DIR/gc.log
+GC_LOG_FILE=/xdfapp/logs/$PROJECT_NAME/gc.log
 
 #alias gpid="ps -ef |grep $CONF_DIR |grep $LIB_DIR |grep -v grep |awk '{print $2}'"
 #pid=`gpid`
@@ -32,7 +29,7 @@ source /etc/profile
 #（★）启动参数
 JAVA_DEBUG_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n "
 JAVA_JMX_OPTS=" -Dcom.sun.management.jmxremote.port=13002 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false "
-JAVA_MEM_OPTS=" -server -Xms1g -Xmx1g -Xmn256m -Xss256k"
+JAVA_MEM_OPTS=" -server -Xms256m -Xmx256m -Xmn128m -Xss256k"
 JAVA_GC_OPTS=" -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintClassHistogram -XX:-TraceClassUnloading -verbose:gc -Xloggc:"$GC_LOG_FILE
 JAVA_OPTS=$JAVA_MEM_OPTS
 
