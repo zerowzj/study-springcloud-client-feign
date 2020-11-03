@@ -6,6 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient;
 
+/**
+ * 可以在构造RequestTemplate 请求时，增加或者修改Header, Method, Body 等信息
+ */
 @Slf4j
 public class CustomRequestInterceptor implements RequestInterceptor {
 
@@ -14,7 +17,7 @@ public class CustomRequestInterceptor implements RequestInterceptor {
 
     @Override
     public void apply(RequestTemplate requestTemplate) {
-        log.info("你好");
+        log.info("global Interceptor");
         String url = requestTemplate.url();
         log.info(">>>>>> {}", url);
     }

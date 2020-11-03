@@ -9,11 +9,13 @@ public class CustomRetryer implements Retryer {
 
     @Override
     public void continueOrPropagate(RetryableException ex) {
-        ex.printStackTrace();
+        log.info("aaaaaaaaaaa");
+       throw ex;
     }
 
     @Override
     public Retryer clone() {
-        return null;
+        log.info("ssssssssssss");
+        return this;
     }
 }

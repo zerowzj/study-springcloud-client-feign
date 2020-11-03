@@ -4,7 +4,7 @@ spring:
     #开启重试机制
     loadbalancer:
       retry:
-        enabled: false
+        enabled: true
     #服务注册和发现，Nacos
 #    nacos:
 #      discovery:
@@ -13,29 +13,29 @@ spring:
 feign:
   #（★）http客户端！！！
   httpclient:
-    enabled: false
+    enabled: true
     connection-timeout: 2000
     #max-connections: 200
   okhttp:
-    enabled: true
+    enabled: false
   #（★）服务客户端
   client:
     #是否使用文件配置
     default-to-properties: true
-    #使用的默认配置
+    #默认配置名称
     default-config: default
     #配置
     config:
       #（▲）默认配置
       default:
         #超时
-        connectTimeout: 8000
-        readTimeout: 8000
+        connectTimeout: 7000
+        readTimeout: 7000
         #拦截器
         requestInterceptors:
-          - study.springcloud.consumer.feign.support.feign.interceptor.MyRequestInterceptor
+          - study.springcloud.consumer.feign.support.feign.interceptor.CustomRequestInterceptor
         #重试
-        #retryer: study.springcloud.consumer.feign.support.feign.SimpleRetryer
+        retryer: study.springcloud.consumer.feign.support.feign.retryer.CustomRetryer
         #decode404:
         #errorDecoder:
         #decoder:
@@ -44,14 +44,14 @@ feign:
       study-springcloud-provider:
         connectTimeout: 5000
         readTimeout: 5000
-        #        requestInterceptors:
-        #          - study.springcloud.consumer.feign.support.feign.interceptor.CustomRequestInterceptor
+        requestInterceptors:
+          - study.springcloud.consumer.feign.support.feign.interceptor.MyRequestInterceptor
         #retryer: study.springcloud.consumer.feign.support.feign.SimpleRetryer
 
 #
-ribbon:
-  ReadTimeout: 3000
-  ConnectTimeout: 3000
-  MaxAutoRetries: 0
-  MaxAutoRetriesNextServer: 1
-  OkToRetryOnAllOperations: false
+#ribbon:
+#  ReadTimeout: 3000
+#  ConnectTimeout: 3000
+#  MaxAutoRetries: 0
+#  MaxAutoRetriesNextServer: 1
+#  OkToRetryOnAllOperations: false
