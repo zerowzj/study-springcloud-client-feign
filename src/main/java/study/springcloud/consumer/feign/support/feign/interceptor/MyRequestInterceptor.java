@@ -14,7 +14,7 @@ public class MyRequestInterceptor implements RequestInterceptor {
 
     @Override
     public void apply(RequestTemplate requestTemplate) {
-        log.info("你好");
+        log.info("my Interceptor");
         String url = requestTemplate.url();
         log.info(">>>>>> {}", url);
     }
