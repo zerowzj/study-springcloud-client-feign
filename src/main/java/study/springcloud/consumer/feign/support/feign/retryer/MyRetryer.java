@@ -1,11 +1,11 @@
-package study.springcloud.consumer.feign.support.feign;
+package study.springcloud.consumer.feign.support.feign.retryer;
 
 import feign.RetryableException;
 import feign.Retryer;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class CommonRetryer implements Retryer {
+public class MyRetryer implements Retryer {
 
     @Override
     public void continueOrPropagate(RetryableException ex) {

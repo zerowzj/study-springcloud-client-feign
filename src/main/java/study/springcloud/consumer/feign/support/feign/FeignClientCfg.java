@@ -1,5 +1,6 @@
 package study.springcloud.consumer.feign.support.feign;
 
+import feign.Client;
 import feign.Request;
 import feign.Retryer;
 import lombok.extern.slf4j.Slf4j;
@@ -14,6 +15,7 @@ public class FeignClientCfg {
 
     public static int READ_TIMEOUT_MS = 3 * 1000;
 
+    Client client;
     /**
      * 超时配置
      */

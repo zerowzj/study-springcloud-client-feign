@@ -1,4 +1,4 @@
-package study.springcloud.consumer.feign.support.feign;
+package study.springcloud.consumer.feign.support.feign.retryer;
 
 import feign.RetryableException;
 import feign.Retryer;

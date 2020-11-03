@@ -1,4 +1,4 @@
-package study.springcloud.consumer.feign.support.feign;
+package study.springcloud.consumer.feign.support.feign.interceptor;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient;
 
 @Slf4j
-public class CommonRequestInterceptor implements RequestInterceptor {
+public class MyRequestInterceptor implements RequestInterceptor {
 
     @Autowired
     LoadBalancerFeignClient loadBalancerFeignClient;
