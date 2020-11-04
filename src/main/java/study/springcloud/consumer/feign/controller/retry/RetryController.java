@@ -17,12 +17,12 @@ public class RetryController {
     @Autowired
     private TimeoutService timeoutService;
 
-    @GetMapping("/timeoutByGet")
+    @RequestMapping("/timeoutByGet")
     public void timeoutByGet(@RequestParam long timeout) {
         timeoutService.timeoutByGet(timeout);
     }
 
-    @PostMapping("/timeoutByPost")
+    @RequestMapping("/timeoutByPost")
     public void timeoutByPost(@RequestParam long timeout) {
         timeoutService.timeoutByPost(timeout);
     }

@@ -14,10 +14,14 @@ spring:
     #当bean同名时，是否允许覆盖注册
     allow-bean-definition-overriding: true
   profiles:
-    active: @env@
+#    active: @env@
 #    active: @env@, feign
+    active: @env@, ribbon
 #    active: @env@, feign, ribbon
-  #Nacos
+    #服务注册和发现，Nacos
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
 #Eureka
 eureka:
   instance:
