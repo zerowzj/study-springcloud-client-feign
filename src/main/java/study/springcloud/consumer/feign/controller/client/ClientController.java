@@ -19,7 +19,7 @@ public class ClientController {
 
     @RequestMapping("/client")
     public Map<String, Object> client() {
-        String name = null;
+        String name;
         if (client instanceof LoadBalancerFeignClient) {
             LoadBalancerFeignClient myClient = (LoadBalancerFeignClient) client;
             name = myClient.getDelegate().getClass().getSimpleName();

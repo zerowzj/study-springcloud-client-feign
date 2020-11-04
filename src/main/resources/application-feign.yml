@@ -48,9 +48,3 @@ feign:
 #          - study.springcloud.consumer.feign.support.feign.interceptor.MyRequestInterceptor
 #        #retryer: study.springcloud.consumer.feign.support.feign.SimpleRetryer
 #
-ribbon:
-  ReadTimeout: 6000
-  ConnectTimeout: 6000
-  MaxAutoRetries: 1
-  MaxAutoRetriesNextServer: 1
-  OkToRetryOnAllOperations: true

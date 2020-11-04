@@ -10,11 +10,13 @@ spring:
     name: study-springcloud-consumer-feign
   main:
     web-application-type: servlet
-    banner-mode: 'off'
+    banner-mode: off
     #当bean同名时，是否允许覆盖注册
     allow-bean-definition-overriding: true
   profiles:
-    active: feign, @env@
+    active: @env@
+#    active: @env@, feign
+#    active: @env@, feign, ribbon
   #Nacos
 #Eureka
 eureka:

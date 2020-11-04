@@ -18,8 +18,8 @@ public class TimeoutController {
     private TimeoutService timeoutService;
 
     @RequestMapping("/timeout")
-    public Map<String, Object> timeout(@RequestParam Long timeout) {
-        timeoutService.timeout(timeout);
+    public Map<String, Object> timeoutByGet(@RequestParam Long timeout) {
+        timeoutService.timeoutByGet(timeout);
         Map<String, Object> data = Results.data();
         data.put("timeout", timeout);
         return Results.ok(data);
