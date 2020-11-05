@@ -2,6 +2,6 @@
 ribbon:
   ReadTimeout: 5000
   ConnectTimeout: 2000
-#MaxAutoRetries: 1
-  ##  MaxAutoRetriesNextServer: 1
-  ##  OkToRetryOnAllOperations: true
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 0
+  #OkToRetryOnAllOperations: true
