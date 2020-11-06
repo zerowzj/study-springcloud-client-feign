@@ -9,11 +9,11 @@ spring:
 feign:
   #（★）http客户端！！！
   httpclient:
-    enabled: true
+    enabled: false
     connection-timeout: 2000
     #max-connections: 200
   okhttp:
-    enabled: false
+    enabled: true
   #（★）服务客户端
   client:
     #是否使用文件配置
