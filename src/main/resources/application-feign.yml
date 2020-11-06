@@ -40,7 +40,7 @@ feign:
       study-springcloud-provider:
         connectTimeout: 5000
         readTimeout: 4000
-#        requestInterceptors:
-#          - study.springcloud.consumer.feign.support.feign.interceptor.MyRequestInterceptor
+        requestInterceptors:
+          - study.springcloud.consumer.feign.support.feign.interceptor.MyRequestInterceptor
 #        #retryer: study.springcloud.consumer.feign.support.feign.SimpleRetryer
 #
