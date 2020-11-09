@@ -1,4 +1,4 @@
-package study.springcloud.consumer.feign.named;
+package study.springcloud.named;
 
 import org.springframework.cloud.context.named.NamedContextFactory;
 
