@@ -14,7 +14,7 @@ feign:
     #max-connections: 200
   okhttp:
     enabled: true
-  #（★）服务客户端
+  #（★）服务
   client:
     #是否使用文件配置
     default-to-properties: true
@@ -22,7 +22,7 @@ feign:
     default-config: default
     #配置
     config:
-      #（▲）默认配置
+      #（▲）默认
       default:
         #超时
         connectTimeout: 5000
@@ -36,7 +36,7 @@ feign:
 #        #errorDecoder:
 #        #decoder:
 #        #encoder:
-      #（▲）特殊配置
+      #（▲）特殊
       study-springcloud-provider:
         connectTimeout: 5000
         readTimeout: 4000
