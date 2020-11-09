@@ -9,17 +9,16 @@
 //
 //@Configuration
 //@EnableConfigurationProperties
-//public class Context2AutoConfiguration {
+//public class CommonContextAutoConfiguration {
 //
 //    String client = "test0";
 //
 //    @Value("${testcontext.name:hello}")
 //    String name;
 //
-//
 //    @Bean
 //    @ConditionalOnMissingBean
 //    public IContext getTestContext() {
-//        return new MyContextBean(client+":"+name);
+//        return new MyContextBean(client + ":" + name);
 //    }
 //}
