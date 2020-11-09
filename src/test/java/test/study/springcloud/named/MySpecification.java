@@ -1,4 +1,4 @@
-package study.springcloud.named;
+package test.study.springcloud.named;
 
 import org.springframework.cloud.context.named.NamedContextFactory;
 
