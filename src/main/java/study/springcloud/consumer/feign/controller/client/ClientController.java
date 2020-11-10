@@ -19,7 +19,7 @@ public class ClientController {
     @Autowired
     private Client client;
 
-    @RequestMapping("/client")
+    @RequestMapping("/getClient")
     public Map<String, Object> client() {
         String name;
         if (client instanceof LoadBalancerFeignClient) {
@@ -29,7 +29,7 @@ public class ClientController {
             name = client.getClass().getSimpleName();
         }
         Map<String, Object> data = Results.data();
-        data.put("name", name);
+        data.put("client", name);
         return Results.ok(data);
     }
 }

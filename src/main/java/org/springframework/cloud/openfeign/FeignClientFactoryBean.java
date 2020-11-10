@@ -232,15 +232,17 @@ class FeignClientFactoryBean
 
     protected <T> T loadBalance(Feign.Builder builder, FeignContext context,
                                 HardCodedTarget<T> target) {
+        //
         Client client = getOptional(context, Client.class);
         if (client != null) {
             builder.client(client);
             Targeter targeter = get(context, Targeter.class);
-            return targeter.target(this, builder, context, target);
+            //
+            T t = targeter.target(this, builder, context, target);
+            return t;
         }
 
-        throw new IllegalStateException(
-                "No Feign Client for loadBalancing defined. Did you forget to include spring-cloud-starter-netflix-ribbon?");
+        throw new IllegalStateException("No Feign Client for loadBalancing defined. Did you forget to include spring-cloud-starter-netflix-ribbon?");
     }
 
     //生成
@@ -248,8 +250,6 @@ class FeignClientFactoryBean
     public Object getObject() throws Exception {
         Object obj = getTarget();
         log.info(">>>>>> type= {}, obj= {}", type.getName(), obj.getClass().getName());
-
-
         return obj;
     }
 
@@ -270,8 +270,7 @@ class FeignClientFactoryBean
                 this.url = this.name;
             }
             this.url += cleanPath();
-            return (T) loadBalance(builder, context,
-                    new HardCodedTarget<>(this.type, this.name, this.url));
+            return (T) loadBalance(builder, context, new HardCodedTarget<>(this.type, this.name, this.url));
         }
         if (StringUtils.hasText(this.url) && !this.url.startsWith("http")) {
             this.url = "http://" + this.url;
@@ -288,8 +287,7 @@ class FeignClientFactoryBean
             builder.client(client);
         }
         Targeter targeter = get(context, Targeter.class);
-        return (T) targeter.target(this, builder, context,
-                new HardCodedTarget<>(this.type, this.name, url));
+        return (T) targeter.target(this, builder, context, new HardCodedTarget<>(this.type, this.name, url));
     }
 
     private String cleanPath() {
