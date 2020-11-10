@@ -7,7 +7,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 //
 @EnableFeignClients(basePackages = {"study.springcloud.provider"})
 
-@EnableEurekaClient
 @SpringBootApplication(scanBasePackages = "study.springcloud.consumer.feign")
 public class SpringBootCfg {
 }
