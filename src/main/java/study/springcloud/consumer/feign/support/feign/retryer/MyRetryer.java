@@ -9,11 +9,10 @@ public class MyRetryer implements Retryer {
 
     @Override
     public void continueOrPropagate(RetryableException ex) {
-        ex.printStackTrace();
     }
 
     @Override
     public Retryer clone() {
-        return null;
+        return new Default(2, 10, 5);
     }
 }

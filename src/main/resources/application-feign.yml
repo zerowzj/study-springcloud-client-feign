@@ -32,10 +32,11 @@ feign:
 #          - study.springcloud.consumer.feign.support.feign.CustomRequestInterceptor
 #        #重试
 #        retryer: CustomRetryer
+#         decoder:
+#         encoder:
 #        #decode404:
 #        #errorDecoder:
-#        #decoder:
-#        #encoder:
+#
       #（▲）特殊
       study-springcloud-provider:
         connectTimeout: 5000
