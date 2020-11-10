@@ -60,13 +60,13 @@
         <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-httpclient</artifactId>
-            <version>9.4.0</version>
+            <version>10.4.0</version>
         </dependency>
         <!-- okhttp -->
         <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-okhttp</artifactId>
-            <version>10.2.0</version>
+            <version>10.4.0</version>
         </dependency>
         <!-- ============================== -->
         <!--（★）Ribbon                    -->
