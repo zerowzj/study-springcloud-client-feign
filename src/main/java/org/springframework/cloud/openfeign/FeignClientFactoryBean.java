@@ -101,8 +101,7 @@ class FeignClientFactoryBean
     }
 
     protected void configureFeign(FeignContext context, Feign.Builder builder) {
-        FeignClientProperties properties = this.applicationContext
-                .getBean(FeignClientProperties.class);
+        FeignClientProperties properties = this.applicationContext.getBean(FeignClientProperties.class);
         if (properties != null) {
             if (properties.isDefaultToProperties()) {
                 configureUsingConfiguration(context, builder);
