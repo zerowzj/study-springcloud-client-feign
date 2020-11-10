@@ -201,8 +201,7 @@ class FeignClientsRegistrar
                     // verify annotated class is an interface
                     AnnotatedBeanDefinition beanDefinition = (AnnotatedBeanDefinition) candidateComponent;
                     AnnotationMetadata annotationMetadata = beanDefinition.getMetadata();
-                    Assert.isTrue(annotationMetadata.isInterface(),
-                            "@FeignClient can only be specified on an interface");
+                    Assert.isTrue(annotationMetadata.isInterface(), "@FeignClient can only be specified on an interface");
 
                     Map<String, Object> attributes = annotationMetadata.getAnnotationAttributes(FeignClient.class.getCanonicalName());
 
@@ -219,7 +218,7 @@ class FeignClientsRegistrar
     private void registerFeignClient(BeanDefinitionRegistry registry,
                                      AnnotationMetadata annotationMetadata, Map<String, Object> attributes) {
         String className = annotationMetadata.getClassName();
-        log.info(">>>>>> register bean {}", className);
+        log.info(">>>>>> Register Bean:  {}", className);
         //（▲）构造 FeignClientFactoryBean bd
         BeanDefinitionBuilder definition = BeanDefinitionBuilder.genericBeanDefinition(FeignClientFactoryBean.class);
         validate(attributes);
@@ -376,7 +375,7 @@ class FeignClientsRegistrar
 
     private void registerClientConfiguration(BeanDefinitionRegistry registry, Object name,
                                              Object configuration) {
-        log.info(">>>>>> register configuration {}= {}", name, configuration);
+        log.info(">>>>>> Register Configuration: {}= {}", name, configuration);
         //配置注册成 FeignClientSpecification
         BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(FeignClientSpecification.class);
         builder.addConstructorArgValue(name);
