@@ -234,7 +234,6 @@ class FeignClientFactoryBean
     protected <T> T loadBalance(Feign.Builder builder, FeignContext context,
                                 HardCodedTarget<T> target) {
         Client client = getOptional(context, Client.class);
-        log.info(">>>>>> clinet= {}", client.getClass().getName());
         if (client != null) {
             builder.client(client);
             Targeter targeter = get(context, Targeter.class);
@@ -248,8 +247,8 @@ class FeignClientFactoryBean
     //生成
     @Override
     public Object getObject() throws Exception {
-        Object obj =getTarget();
-        log.info(">>>>>> {}", obj.getClass().getName());
+        Object obj = getTarget();
+        log.info(">>>>>> type= {}, obj= {}", type.getName(), obj.getClass().getName());
         return obj;
     }
 
