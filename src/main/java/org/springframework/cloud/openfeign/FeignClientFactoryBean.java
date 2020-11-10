@@ -31,6 +31,7 @@ import feign.codec.Decoder;
 import feign.codec.Encoder;
 import feign.codec.ErrorDecoder;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.FactoryBean;
@@ -48,6 +49,7 @@ import org.springframework.util.StringUtils;
  * @author Eko Kurniawan Khannedy
  * @author Gregor Zurowski
  */
+@Slf4j
 class FeignClientFactoryBean
         implements FactoryBean<Object>, InitializingBean, ApplicationContextAware {
 
@@ -232,6 +234,7 @@ class FeignClientFactoryBean
     protected <T> T loadBalance(Feign.Builder builder, FeignContext context,
                                 HardCodedTarget<T> target) {
         Client client = getOptional(context, Client.class);
+        log.info(">>>>>> clinet= {}", client.getClass().getName());
         if (client != null) {
             builder.client(client);
             Targeter targeter = get(context, Targeter.class);
@@ -245,7 +248,9 @@ class FeignClientFactoryBean
     //生成
     @Override
     public Object getObject() throws Exception {
-        return getTarget();
+        Object obj =getTarget();
+        log.info(">>>>>> {}", obj.getClass().getName());
+        return obj;
     }
 
     /**
@@ -273,6 +278,7 @@ class FeignClientFactoryBean
         }
         String url = this.url + cleanPath();
         Client client = getOptional(context, Client.class);
+        log.info(">>>>>> client= {}", client.getClass().getSimpleName());
         if (client != null) {
             if (client instanceof LoadBalancerFeignClient) {
                 // not load balancing because we have a url,

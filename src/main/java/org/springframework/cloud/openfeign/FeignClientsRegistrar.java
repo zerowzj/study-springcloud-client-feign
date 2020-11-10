@@ -155,7 +155,8 @@ class FeignClientsRegistrar
             } else {
                 name = "default." + metadata.getClassName();
             }
-            log.info(">>>>>> {} {}", name, defaultAttrs.get("defaultConfiguration"));
+            log.info(">>>>>> {}", name);
+            log.info(">>>>>> {}", defaultAttrs.get("defaultConfiguration"));
             registerClientConfiguration(registry, name, defaultAttrs.get("defaultConfiguration"));
         }
     }
@@ -222,6 +223,7 @@ class FeignClientsRegistrar
     private void registerFeignClient(BeanDefinitionRegistry registry,
                                      AnnotationMetadata annotationMetadata, Map<String, Object> attributes) {
         String className = annotationMetadata.getClassName();
+        log.info(">>>>>> {}", className);
         BeanDefinitionBuilder definition = BeanDefinitionBuilder
                 .genericBeanDefinition(FeignClientFactoryBean.class);
         validate(attributes);
