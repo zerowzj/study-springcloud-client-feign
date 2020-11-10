@@ -248,6 +248,8 @@ class FeignClientFactoryBean
     public Object getObject() throws Exception {
         Object obj = getTarget();
         log.info(">>>>>> type= {}, obj= {}", type.getName(), obj.getClass().getName());
+
+
         return obj;
     }
 
