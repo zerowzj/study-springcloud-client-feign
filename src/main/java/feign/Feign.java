@@ -113,7 +113,7 @@ public abstract class Feign {
         public Builder logLevel(Logger.Level logLevel) {
             this.logLevel = logLevel;
             return this;
-        }
+    }
 
         public Builder contract(Contract contract) {
             this.contract = contract;
