@@ -4,9 +4,9 @@ cd $(dirname $0)
 #cd ..
 
 #项目名称
-PROJECT_NAME=study-springboot-consumer-feign
+PROJECT_NAME=study-springcloud-consumer-feign
 #JAR文件名
-JAR_FILE=study-springboot-consumer-feign-1.0.jar
+JAR_FILE=study-springcloud-consumer-feign-1.0.jar
 #部署目录
 DEPLOY_DIR=$(pwd)
 
