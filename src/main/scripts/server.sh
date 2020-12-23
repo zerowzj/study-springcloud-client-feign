@@ -6,7 +6,7 @@ cd $(dirname $0)
 #项目名称
 PROJECT_NAME=study-springboot-consumer-feign
 #JAR文件名
-JAR_NAME=study-springboot-consumer-feign-1.0.jar
+JAR_FILE=study-springboot-consumer-feign-1.0.jar
 #部署目录
 DEPLOY_HOME=$(pwd)
 
@@ -35,7 +35,7 @@ JAVA_OPTS=$JAVA_MEM_OPTS
 
 #获取pid
 get_pid() {
-  pid=$(ps -ef | grep $JAR_NAME | grep -v grep | awk '{print $2}')
+  pid=$(ps -ef | grep $JAR_FILE | grep -v grep | awk '{print $2}')
   echo "$pid"
 }
 #启动
@@ -46,7 +46,7 @@ start() {
     echo "ERROR: Server running on $pid"
     exit 0
   fi
-  nohup java $JAVA_OPTS -jar $LIB_DIR/$JAR_NAME >/dev/null 2>&1 &
+  nohup java $JAVA_OPTS -jar $DEPLOY_DIR/$JAR_FILE >$STDOUT_LOG 2>&1 &
   sleep 1
   pid=$(get_pid)
   if [ $? -eq 0 ]; then
