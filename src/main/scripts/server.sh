@@ -1,7 +1,7 @@
 #!/bin/sh
 #进入部署目录
 cd $(dirname $0)
-cd ..
+#cd ..
 
 #项目名称
 PROJECT_NAME=study-springboot-consumer-feign
