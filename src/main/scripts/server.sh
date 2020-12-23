@@ -8,12 +8,12 @@ PROJECT_NAME=study-springboot-consumer-feign
 #JAR文件名
 JAR_FILE=study-springboot-consumer-feign-1.0.jar
 #部署目录
-DEPLOY_HOME=$(pwd)
+DEPLOY_DIR=$(pwd)
 
 #标准输出文件
-STDOUT_FILE=/xdfapp/logs/$PROJECT_NAME/stdout.log
+STDOUT_LOG=/xdfapp/logs/$PROJECT_NAME/stdout.log
 # GC日志文件
-GC_LOG_FILE=/xdfapp/logs/$PROJECT_NAME/gc.log
+GC_LOG=/xdfapp/logs/$PROJECT_NAME/gc.log
 
 #alias gpid="ps -ef |grep $CONF_DIR |grep $LIB_DIR |grep -v grep |awk '{print $2}'"
 #pid=`gpid`
