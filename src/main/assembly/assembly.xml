@@ -7,7 +7,7 @@
     <!-- 是否包括基本目录 -->
     <includeBaseDirectory>true</includeBaseDirectory>
     <!-- 基本目录 -->
-    <baseDirectory>study-springcloud-provider</baseDirectory>
+    <baseDirectory>study-springcloud-consumer-feign</baseDirectory>
     <!-- 打包文件格式 -->
     <formats>
         <format>tar.gz</format>
