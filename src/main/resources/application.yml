@@ -18,17 +18,13 @@ spring:
 #    active: @env@, feign
 #    active: @env@, ribbon
 #    active: @env@, feign, ribbon
-    #（★）acos
-#    nacos:
-#      discovery:
-#        server-addr: 127.0.0.1:8848
 #（★）Eureka
 eureka:
   instance:
     hostname: ${spring.application.name}
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
-    #ip-address:
+    ip-address: 150.158.110.15
   client:
     service-url:
       defaultZone: @eureka.server.list@
