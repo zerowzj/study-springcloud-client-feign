@@ -7,7 +7,6 @@ spring:
 #
 hystrix:
   command:
-    #（）
     default:
       #（▲）执行（控制HystrixCommand.run()如何执行）
       execution:
@@ -24,7 +23,7 @@ hystrix:
             interruptOnTimeout: true
           semaphore:
             maxConcurrentRequests: 100
-      #（▲）熔断（控制HystrixCircuitBreaker的行为）
+      #（▲）熔断（控制 HystrixCircuitBreaker 的行为）
       circuitBreaker:
         #用来跟踪circuit的健康性，如果未达标则让请求短路。默认true
         enabled: true
